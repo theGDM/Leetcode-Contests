@@ -32,6 +32,8 @@
 // The difference between the maximum and minimum value in the third subsequences is 5 - 5 = 0.
 // Since three subsequences were created, we return 3. It can be shown that 3 is the minimum number of subsequences needed.
 
+// TC : O(nlogn)
+// SC : O(1)
 class Solution {
     //order does not matter, as we need to just count the number of such subsequence
     public int partitionArray(int[] nums, int k) {
