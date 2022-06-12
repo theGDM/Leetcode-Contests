@@ -56,3 +56,37 @@ class Solution {
         return ans;
     }
 }
+
+//2nd Way
+class Solution {
+    public String[] divideString(String s, int k, char fill) {
+        int size = (int)Math.ceil((double)s.length() / k);
+        ArrayList<String> str = new ArrayList<>();
+        String[] ans = new String[size];
+        
+        int i = 0;
+        while(i < s.length()){
+            if(i + k >= s.length()){
+                str.add(s.substring(i, s.length()));
+                break;
+            }else{
+                str.add(s.substring(i, k + i));
+                i += k;
+            }
+        }
+        System.out.println(str);
+        
+        for(int l = 0;l < str.size(); ++l){
+            String st = str.get(l);
+        
+            if(st.length() < k){
+                int len = k - st.length();
+                for(int j = 0; j < len; ++j){
+                    st = st + fill;
+                }
+            }
+            ans[l] = st;
+        }
+        return ans;
+    }
+}
